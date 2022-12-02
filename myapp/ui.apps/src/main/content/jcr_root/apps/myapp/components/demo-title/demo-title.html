@@ -1,0 +1,6 @@
+<sly data-sly-use.demo="com.myapp.core.models.Header">
+    <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @categories=['clientlibcat2']}"/>
+   This is DemoTitle Component
+    <h2>${demo.text}</h2>
+</sly>

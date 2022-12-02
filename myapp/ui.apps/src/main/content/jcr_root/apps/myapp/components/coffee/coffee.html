@@ -1,0 +1,36 @@
+ <form method="POST" action="/bin/submitdata" enctype="multipart/form-data">
+
+    <label for="coffees">Type Of Coffee:</label>
+    <select name="coffees" id="coffees">
+        <option value="latte">Latte</option>
+        <option value="cappuccino">Cappuccino</option>
+        <option value="americano">Americano</option>
+        <option value="espresso">Espresso</option>
+    </select>
+    <br>
+    <label name="quantity" >Quantity:</label>
+    <input type="text" name="Quantity" value=" " />
+    <br><br>
+    <input type="submit" value="Submit" id="button" >
+</form>
+
+ <script>
+$(document).ready(function(){
+  $("#button").click(function(){
+$.ajax({
+            url: "/bin/submitdata",
+            dataType: 'json',
+            method: 'POST',
+            data: {},
+            cache: false,
+            mimeType: 'application/json',
+            success: function (data) {
+                console.log("Your order for " + data.title + " is here");
+            },
+            error: function (xhr, status, err) {
+                console.log(err);
+            }
+        });
+  });
+});
+</script>

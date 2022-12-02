@@ -1,0 +1,14 @@
+<sly data-sly-use.model="com.myapp.core.models.HeaderTask">
+<sly data-sly-use.clientlibs="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlibs.all @ categories='myapp.task'}"></sly>
+<body>
+
+<div class="topnav" style="color:${properties.textcolor @context='styleToken'};">
+ <a class="active" href="#">${currentPage.title} </a>
+ <div class="loginb">
+  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">${model.userName}</button>
+ </div>
+</div>
+
+</body>
+ </sly>

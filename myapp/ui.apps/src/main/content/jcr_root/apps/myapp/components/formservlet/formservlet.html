@@ -1,0 +1,34 @@
+<body class="container">
+    <form method="post" enctype="multipart/form-data" action="/bin/submitdata3">
+        <label>Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label>Phone Number:</label>
+        <input type="text" id="phoneNo" name="phoneNo"><br><br>
+        <label>Age:</label>
+        <input type="text" id="age" name="age"><br><br>
+        <label>DateOfBirth:</label>
+        <input type="text" id="dob" name="dob"><br><br>
+        <button class="btn" type="submit" name="button">Submit</button>
+    </form>
+
+    <script>
+$(document).ready(function(){
+  $("button").click(function(){
+$.ajax({
+            url: "/bin/submitdata3",
+            method: 'POST',
+            data: {},
+            cache: false,
+            mimeType: 'txt/html',
+            success: function (data) {
+                window.location.href="/content/myapp/navigation-page.html";
+            },
+            error: function (xhr, status, err) {
+                 window.location.href="/content/myapp/FooterPage.html";
+            }
+        });
+  });
+});
+</script>
+    </body>
+

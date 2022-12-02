@@ -1,0 +1,67 @@
+<sly data-sly-use.footerModel="com.myapp.core.models.FooterMultiField"/>
+<sly data-sly-use.clientlibs="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlibs.all @ categories='cq.author.accordion'}"></sly>
+
+
+
+ <header>
+  <nav id="topnav">
+  <ul data-sly-list.blocks="${footerModel.blockMultiFieldList}">
+   <li>${ blocks.block}</li>
+    <ul data-sly-list.footerItem="${blocks.itemsMultiFieldList}">
+     <li>
+      <a href="${footerItem.link}">${footerItem.title}</a>
+     </li>
+    </ul>
+  </ul>
+  </nav>
+ </header>
+ <style>
+  *{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetics,sans-serif;
+text-transform:captalize;
+text-decoration: none
+}
+header {
+position:fixed;
+top:0;left:0;right:0;
+background:#ffffff;
+padding:0px 7%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+z-index:1000}
+header .logo{
+font-weight:bolder;
+font-size:25px;
+color:#333;
+}
+header .topnav ul{
+list-style:none;
+}
+header .topnav ul li{
+position:relative;
+float:left;
+}
+header .topnav ul li a{
+font-size:20px;
+padding:20px;
+color:#333;
+display:block;
+}
+header .topnav ul li ul{
+position:absolute;
+left:0;
+width:200px;
+background:#fff;
+display:none;
+}
+
+header .topnav ul li:hover>ul{
+display:initial;
+}
+
+ </style>

@@ -1,0 +1,8 @@
+#base=js
+
+blog.js
+comment.js
+docs.min.js
+holder.min.js
+popper.min.js
+bootstrap.min.js
